@@ -1,0 +1,39 @@
+<template>
+    <div style="margin:25px;">
+        <div style="height:150px;background:#063868;padding:10px;">
+            <p style="color:white;font-size:22px;">Categorisatie-test applicatie </p>
+            <p style="color:white;font-size:16px;margin-top:10px;">Deze applicatie toont een opsomming van at onze
+                producten
+                en diensten.</p>
+            <p style="color:white;font-size:16px;"> Selecteer (in een toekomstige versie) een oplossing voor meer
+                informatie. </p>
+        </div>
+        <div style="background:white" class="demo-only demo-only--sizing slds-grid slds-wrap">
+            <div class="slds-size--1-of-4" style="padding:10px;">
+                <div style="border:2px solid #f3f2f2;border-radius:5px;padding:10px;">
+                    <div style="line-height: 1.9;font-family: fantasy;margin-bottom:5px;">
+                        <p style="font-size:16px;font-weight:bold;font-family: 'Salesforce Sans';">Filters</p>
+                        <p style="font-size:14px;">Filter oplossingen op doelgroep, locatie & categorie.</p>
+                    </div>
+                    <div>
+                        <lightning-checkbox-group name="Oplossingen voor" label="Oplossingen voor" options={options}
+                            onchange={handleFilterChange} value={value} style="margin-bottom:7px;"
+                            data-filtername="Oplossingen_voor"></lightning-checkbox-group>
+                        <lightning-checkbox-group name="Loca tie" label="Loca tie" options={options1}
+                            onchange={handleFilterChange} value={value} style="margin-bottom:7px;"
+                            data-filtername="Loca_tie"></lightning-checkbox-group>
+                        <lightning-checkbox-group name="Thema" label="Thema" options={options2}
+                            onchange={handleFilterChange} value={value} style="margin-bottom:7px;"
+                            data-filtername="Thema"></lightning-checkbox-group>
+                        <lightning-checkbox-group name="Family" label="Family" options={productFamilies}
+                            onchange={handleFilterChange} value={productFamily} data-filtername="Family"
+                            style="height: 300px;"></lightning-checkbox-group>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-size--3-of-4">
+                <c-product-display filters={filterString}></c-product-display>
+            </div>
+        </div>
+    </div>
+</template>

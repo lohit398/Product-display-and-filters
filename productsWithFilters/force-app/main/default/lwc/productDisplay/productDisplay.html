@@ -1,0 +1,21 @@
+<template>
+      
+    <div class="outer-container">
+        <template if:true={products} for:each={products} for:item="product" for:index="index">
+            <div class="container" key={product.Id} onclick={navigateNext} data-recordid={product.Id}>
+                <div>
+                    <img src={product.Image_URL__c} class="prod-image"></img>
+                </div>
+                <div class="prod-desc">
+                    <div class="prod-title">
+                        {product.Name}
+                    </div>
+                    {product.Description}
+                </div>
+                <div class="prod-btn">
+                    <p>{product.Family}</p>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>
