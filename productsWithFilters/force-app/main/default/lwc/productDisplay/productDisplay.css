@@ -2,7 +2,7 @@
 .container{
     background:white;
     width:275px;
-    height: 517px;
+    height: 500px;
     border: 1px solid #f3f2f2;
     margin:10px;
     position:relative;
@@ -44,5 +44,6 @@
 }
 
 .prod-image{
-    height: 300px;
+    height: 250px;
+    width: -webkit-fill-available;
 }
