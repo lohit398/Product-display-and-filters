@@ -45,7 +45,8 @@ export default class ProductDisplay extends NavigationMixin(LightningElement) {
                     productFamilyFilters: this.filterValues.productFamilyFilters,
                     themaFilters: this.filterValues.themaFilters,
                     Oplossingen_voor_filters: this.filterValues.Oplossingen_voor_filters,
-                    Loca_tie_filters: this.filterValues.Loca_tie_filters
+                    Loca_tie_filters: this.filterValues.Loca_tie_filters,
+                    sortBy : this.filterValues.sortRecordsBy
                 })
                     .then(response => {
                         this.products = [];

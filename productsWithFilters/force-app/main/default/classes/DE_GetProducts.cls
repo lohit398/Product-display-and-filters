@@ -5,7 +5,7 @@ public class DE_GetProducts {
     }
     
     @AuraEnabled(cacheable=true)
-    public static List<Product2> filterProducts(List<String> productFamilyFilters,List<String> themaFilters, List<String> Oplossingen_voor_filters,List<String> Loca_tie_filters){
+    public static List<Product2> filterProducts(List<String> productFamilyFilters,List<String> themaFilters, List<String> Oplossingen_voor_filters,List<String> Loca_tie_filters, List<String> sortBy){
         String query = 'SELECT Id,Name,Description,Image_URL__c,Family from Product2 WHERE ';
         
         if(!productFamilyFilters.isEmpty()){
@@ -43,9 +43,12 @@ public class DE_GetProducts {
                     loca_tie =  loca_tie +'\''+ Loca_tie_filters[k] + '\'' ;
             }
             query = query + ' AND Locatie__c  includes ('+loca_tie+')';
-            
         }
-        
+        if(sortBy.size() == 2 || sortBy.isEmpty())
+            query = query + ' ORDER BY Family,Name ASC';
+        else if(sortBy.size() == 1){
+            query = query + ' ORDER BY '+sortBy[0]+' ASC'; 
+        }
         
         return Database.query(query);
     }

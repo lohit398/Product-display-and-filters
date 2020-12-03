@@ -19,15 +19,17 @@
                         <lightning-checkbox-group name="Oplossingen voor" label="Oplossingen voor" options={options}
                             onchange={handleFilterChange} value={value} style="margin-bottom:7px;"
                             data-filtername="Oplossingen_voor"></lightning-checkbox-group>
-                        <lightning-checkbox-group name="Loca tie" label="Loca tie" options={options1}
+                        <lightning-checkbox-group name="Locatie" label="Locatie" options={options1}
                             onchange={handleFilterChange} value={value} style="margin-bottom:7px;"
                             data-filtername="Loca_tie"></lightning-checkbox-group>
                         <lightning-checkbox-group name="Thema" label="Thema" options={options2}
                             onchange={handleFilterChange} value={value} style="margin-bottom:7px;"
                             data-filtername="Thema"></lightning-checkbox-group>
                         <lightning-checkbox-group name="Family" label="Family" options={productFamilies}
-                            onchange={handleFilterChange} value={productFamily} data-filtername="Family"
-                            style="height: 300px;"></lightning-checkbox-group>
+                            onchange={handleFilterChange} value={productFamily} data-filtername="Family"></lightning-checkbox-group>
+                        <lightning-checkbox-group name="Sort By" label="Sort By" options={sortBy}
+                            onchange={handleFilterChange} value={sortedBy} data-filtername="sort"
+                            style="height: 110px;"></lightning-checkbox-group>
                     </div>
                 </div>
             </div>
